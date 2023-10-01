@@ -5,6 +5,7 @@
 
 int main(void)
 {
+	GPIO_RegDef_t* p = get_gpio_port_register(GPIOA);
     /* Loop forever */
 	for(;;);
 }

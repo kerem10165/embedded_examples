@@ -1,6 +1,8 @@
 #ifndef INC_STM32F401XX_H_
 #define INC_STM32F401XX_H_
 
+#include <stdint.h>
+
 #define FLASH_BASE_ADDR				0x08000000U
 #define SRAM_BASE_ADDR				0x20000000U
 #define ROM_BASE_ADDR				0x1FFF0000U //reference manual implies that this area actaually main memory.
@@ -53,6 +55,9 @@ typedef struct
 	uint32_t AFR[2]; //AFRL AFRH
 
 }GPIO_RegDef_t; //this can be found at gpio register map
+
+#define get_gpio_port_register(X) (GPIO_RegDef_t*)(X ## _BASE_ADDR)
+
 
 
 #endif /* INC_STM32F401XX_H_ */
